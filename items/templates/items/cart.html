@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    
+    {% if request.user.is_authenticated %}
+        cart for: {{request.user.username}}
+    {% else %}
+    cart
+    {% endif %}
+        
+{% endblock title %}
+    
+
+
+{% block content %}
+    <div class="container">
+        
+        {% for item in obj %}
+
+        <p>
+            {{item.name}}
+        </p>
+            
+        {% endfor %}
+            
+
+    </div>
+{% endblock content %}
+    
